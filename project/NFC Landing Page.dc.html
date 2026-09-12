@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html, body { margin:0; padding:0; background:#111; }
+body { font-family:'Poppins', sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:#111; text-decoration:none; }
+a:hover { color:#555; }
+@keyframes riseIn { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+@keyframes maskUp { from { transform:translateY(108%); } to { transform:translateY(0); } }
+@keyframes pulseRing { 0% { transform:scale(0.8); opacity:0.85; } 70% { transform:scale(2.4); opacity:0; } 100% { transform:scale(2.4); opacity:0; } }
+@keyframes tapRipple { 0% { transform:scale(0.15); opacity:0.55; } 100% { transform:scale(3.2); opacity:0; } }
+@keyframes kenBurns { from { transform:scale(1.14); } to { transform:scale(1.02); } }
+@keyframes ticker { from { transform:translate3d(0,0,0); } to { transform:translate3d(-50%,0,0); } }
+@keyframes scrollNudge { 0%,100% { transform:translateY(0); opacity:0.55; } 50% { transform:translateY(7px); opacity:1; } }
+@keyframes shimmer { from { background-position:-200% 0; } to { background-position:200% 0; } }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="width:100%; max-width:680px; margin:0 auto; background:#fff; color:#111; overflow-x:hidden;">
+
+  <div style="position:fixed; top:0; left:0; right:0; height:3px; background:rgba(0,0,0,0.08); z-index:60; pointer-events:none;">
+    <div ref="{{ barRef }}" style="height:100%; width:0%; background:#fff; mix-blend-mode:difference; transform-origin:left center;"></div>
+  </div>
+
+  <section style="position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; background:#111; color:#fff; padding:0 0 calc(clamp(36px,7vw,64px) + env(safe-area-inset-bottom)); overflow:hidden;">
+    <div style="position:absolute; inset:0; overflow:hidden; background:#111;">
+      <img src="assets/oryx-hero.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 38%; filter:grayscale(1) contrast(1.05);">
+      <video ref="{{ videoRef }}" poster="assets/oryx-hero.png" autoplay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; filter:grayscale(1) contrast(1.06); animation:kenBurns 22s ease-out both;">
+      </video>
+    </div>
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.18) 24%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.88) 72%, rgba(0,0,0,0.97) 100%);"></div>
+    <div style="position:absolute; inset:0; background:radial-gradient(120% 70% at 50% 34%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.42) 100%);"></div>
+    <div style="position:absolute; left:0; right:0; bottom:0; height:62%; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.9) 100%); backdrop-filter:blur(1.5px); -webkit-backdrop-filter:blur(1.5px); -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 40%); mask-image:linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 40%);"></div>
+
+    <div style="position:absolute; top:42%; left:50%; width:52vw; max-width:340px; aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:none;">
+      <span style="position:absolute; inset:0; border:1px solid rgba(255,255,255,0.85); border-radius:50%; animation:tapRipple 2.6s cubic-bezier(0.2,0.7,0.3,1) 0.15s both;"></span>
+      <span style="position:absolute; inset:0; border:1px solid rgba(255,255,255,0.7); border-radius:50%; animation:tapRipple 2.6s cubic-bezier(0.2,0.7,0.3,1) 0.55s both;"></span>
+      <span style="position:absolute; inset:0; border:1px solid rgba(255,255,255,0.55); border-radius:50%; animation:tapRipple 2.6s cubic-bezier(0.2,0.7,0.3,1) 0.95s both;"></span>
+    </div>
+
+    <div style="position:absolute; top:calc(clamp(20px,5vw,44px) + env(safe-area-inset-top)); left:clamp(24px,6vw,40px); right:clamp(24px,6vw,40px); display:flex; align-items:center; justify-content:space-between; gap:16px; animation:riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.1s both;">
+      <img src="assets/logo-white.png" alt="Oryx Desert Salt" style="height:clamp(38px,9vw,54px); width:auto; opacity:0.95;">
+      <div style="display:flex; align-items:center; gap:10px; padding:8px 14px; border:1px solid rgba(255,255,255,0.45); border-radius:999px; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">
+        <span style="position:relative; display:inline-flex; width:8px; height:8px;">
+          <span style="position:absolute; inset:0; border-radius:50%; background:#fff; animation:pulseRing 2.4s ease-out infinite;"></span>
+          <span style="position:relative; width:8px; height:8px; border-radius:50%; background:#fff;"></span>
+        </span>
+        Tapped
+      </div>
+    </div>
+
+    <div ref="{{ heroRef }}" style="position:relative; padding:0 clamp(24px,6vw,40px); display:flex; flex-direction:column; gap:clamp(14px,3vw,20px); text-shadow:0 2px 24px rgba(0,0,0,0.55);">
+      <div style="overflow:hidden;"><div style="font-size:clamp(10px,2.6vw,12px); font-weight:600; letter-spacing:4px; text-transform:uppercase; opacity:0.8; animation:maskUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.35s both;">From the Kalahari</div></div>
+      <h1 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(46px,12.5vw,84px); line-height:0.94; letter-spacing:-2px;">
+        <span style="display:block; overflow:hidden; padding-bottom:0.06em; margin-bottom:-0.06em;"><span style="display:block; animation:maskUp 1.1s cubic-bezier(0.16,1,0.3,1) 0.5s both;">Salt Within</span></span>
+        <span style="display:block; overflow:hidden; padding-bottom:0.08em; margin-bottom:-0.08em;"><span style="display:block; animation:maskUp 1.1s cubic-bezier(0.16,1,0.3,1) 0.62s both;">Reach</span></span>
+      </h1>
+      <div style="overflow:hidden; padding-bottom:0.1em; margin-bottom:-0.1em;"><p style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:500; font-size:clamp(19px,4.8vw,28px); line-height:1.25; opacity:0.95; animation:maskUp 1s cubic-bezier(0.16,1,0.3,1) 0.78s both;">More than meets the grind.</p></div>
+      <p style="margin:6px 0 0; font-size:clamp(14px,3.6vw,17px); line-height:1.6; opacity:0.78; max-width:430px; animation:riseIn 1s cubic-bezier(0.2,0.7,0.2,1) 0.95s both;">You just tapped a grinder that has travelled 15 000 km from a salt pan in the middle of nowhere. Here is the rest of the story.</p>
+      <div style="margin-top:clamp(10px,3vw,18px); display:flex; align-items:center; gap:12px; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; animation:scrollNudge 2.4s ease-in-out 1.6s infinite;">
+        <span style="display:block; width:26px; height:1px; background:#fff;"></span>Scroll
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,12vw,88px) clamp(24px,6vw,40px) clamp(40px,9vw,64px); background:#fff;">
+    <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#6a6a6a;">The story</div>
+    <h2 data-reveal="mask" style="margin:18px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(30px,7.6vw,44px); line-height:1.08; letter-spacing:-1px;">One woman, 34 tons of salt, and a dining room table.</h2>
+    <p data-reveal="up" style="margin:22px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; color:#3a3a3a;">Fifteen years ago Samantha Skyring sold her house and bought 34 tons of salt. A single mother, packing bags at her dining room table while caring for her young son. No factory, no investors &mdash; just a conviction that the cleanest salt on earth was sitting untouched under a desert.</p>
+    <p data-reveal="up" style="margin:18px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; color:#3a3a3a;">Today Oryx Desert Salt reaches 23 countries and a team of 35 from communities south of Cape Town. Same salt. Same pan. Same belief.</p>
+  </section>
+
+  <figure style="margin:0; position:relative; overflow:hidden;">
+    <img data-parallax="70" src="assets/saltpan-1.png" alt="The Kalahari salt pan" style="display:block; width:100%; height:clamp(240px,58vw,380px); object-fit:cover; filter:grayscale(1) contrast(1.06); will-change:transform;">
+    <figcaption data-reveal="up" style="position:absolute; left:clamp(24px,6vw,40px); bottom:clamp(18px,4vw,26px); color:#fff; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; text-shadow:0 1px 12px rgba(0,0,0,0.6);">5 000 hectares &middot; 155 miles from the nearest town</figcaption>
+  </figure>
+
+  <section style="padding:clamp(48px,10vw,72px) clamp(24px,6vw,40px); background:#fff;">
+    <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#6a6a6a;">01 &mdash; The source</div>
+    <h3 data-reveal="mask" style="margin:16px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(26px,6.4vw,36px); line-height:1.12; letter-spacing:-0.8px;">Three hundred million years in the making</h3>
+    <p data-reveal="up" style="margin:18px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; color:#3a3a3a;">Beneath the pan lies a 55 million ton salt aquifer. Three subterranean streams move through Dwyka rock strata laid down 300 million years ago, replenishing the brine year after year. We spread it across the pan, the African sun does the rest &mdash; four weeks at 120&deg;F, and the crystals are ready.</p>
+    <div style="margin-top:clamp(26px,6vw,36px); display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:clamp(10px,3vw,18px);">
+      <div data-reveal="up" style="border-top:2px solid #111; padding-top:14px;">
+        <div data-count-to="55" data-count-suffix="M" style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(22px,5.6vw,30px); line-height:1;">55M</div>
+        <div style="margin-top:8px; font-size:11px; line-height:1.45; color:#6a6a6a; letter-spacing:0.4px;">tons of underground salt</div>
+      </div>
+      <div data-reveal="up" style="border-top:2px solid #111; padding-top:14px;">
+        <div data-count-to="80" data-count-suffix="+" style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(22px,5.6vw,30px); line-height:1;">80+</div>
+        <div style="margin-top:8px; font-size:11px; line-height:1.45; color:#6a6a6a; letter-spacing:0.4px;">minerals &amp; trace elements</div>
+      </div>
+      <div data-reveal="up" style="border-top:2px solid #111; padding-top:14px;">
+        <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(22px,5.6vw,30px); line-height:1;">0</div>
+        <div style="margin-top:8px; font-size:11px; line-height:1.45; color:#6a6a6a; letter-spacing:0.4px;">additives, chemicals, microplastics</div>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:#111; color:#fff; padding:clamp(14px,3.4vw,20px) 0; overflow:hidden; border-top:1px solid rgba(255,255,255,0.12); border-bottom:1px solid rgba(255,255,255,0.12);">
+    <div style="display:flex; width:max-content; animation:ticker 26s linear infinite; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(15px,3.8vw,20px); letter-spacing:-0.3px; white-space:nowrap;">
+      <span style="padding-right:28px;">Mineral, Not Minimal</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+      <span style="padding-right:28px;">Don&rsquo;t Panic, It&rsquo;s Ceramic</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+      <span style="padding-right:28px;">Refill Not Landfill</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+      <span style="padding-right:28px;">More Than Meets The Grind</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+      <span style="padding-right:28px;">Mineral, Not Minimal</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+      <span style="padding-right:28px;">Don&rsquo;t Panic, It&rsquo;s Ceramic</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+      <span style="padding-right:28px;">Refill Not Landfill</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+      <span style="padding-right:28px;">More Than Meets The Grind</span><span style="padding-right:28px; opacity:0.35;">&#9670;</span>
+    </div>
+  </div>
+
+  <section style="background:#111; color:#fff; padding:clamp(52px,11vw,80px) clamp(24px,6vw,40px);">
+    <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; opacity:0.55;">02 &mdash; What is inside</div>
+    <h3 style="margin:16px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(30px,7.8vw,46px); line-height:1.04; letter-spacing:-1.2px;">
+      <span style="display:block; overflow:hidden; padding-bottom:0.06em; margin-bottom:-0.06em;"><span data-reveal="line" style="display:block;">Mineral,</span></span>
+      <span style="display:block; overflow:hidden; padding-bottom:0.1em; margin-bottom:-0.1em;"><span data-reveal="line" data-delay="110" style="display:block;">Not Minimal.</span></span>
+    </h3>
+    <p data-reveal="up" style="margin:20px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; opacity:0.82;">Table salt is stripped of the 80+ elements that make salt worth eating, then topped up with anti-caking agents. Ours is sun-dried and left alone. Nothing added, nothing taken away &mdash; a natural source of electrolytes and the trace minerals your body actually runs on.</p>
+    <p data-reveal="up" style="margin:16px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; opacity:0.82;">Gentle, full-bodied flavour that lifts a dish instead of flattening it. The smallest ingredient in the meal, making the biggest difference.</p>
+  </section>
+
+  <figure style="margin:0; overflow:hidden;">
+    <img data-parallax="60" src="assets/hands-bw.png" alt="Hands holding Kalahari salt" style="display:block; width:100%; height:clamp(230px,56vw,360px); object-fit:cover; filter:grayscale(1) contrast(1.04); will-change:transform;">
+  </figure>
+
+  <section style="background:#111; color:#fff; padding:clamp(52px,11vw,80px) clamp(24px,6vw,40px);">
+    <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; opacity:0.55;">03 &mdash; The grinder</div>
+    <h3 style="margin:16px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(30px,7.8vw,46px); line-height:1.04; letter-spacing:-1.2px;">
+      <span style="display:block; overflow:hidden; padding-bottom:0.06em; margin-bottom:-0.06em;"><span data-reveal="line" style="display:block;">Don&rsquo;t Panic,</span></span>
+      <span style="display:block; overflow:hidden; padding-bottom:0.1em; margin-bottom:-0.1em;"><span data-reveal="line" data-delay="110" style="display:block;">It&rsquo;s Ceramic.</span></span>
+    </h3>
+    <p data-reveal="up" style="margin:20px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; opacity:0.82;">Every other grinder head on the shelf is plastic &mdash; and every turn shaves a little of it into your food. Ours is ceramic: harder, sharper, and good for 20 refills and more. Oryx spearheaded the ceramic mechanism so the grinder in your hand is a thing you keep, not a thing you finish.</p>
+    <div data-reveal="up" style="margin-top:clamp(24px,5vw,32px); display:flex; align-items:center; gap:16px; padding:18px 20px; border:1px solid rgba(255,255,255,0.22);">
+      <img src="assets/nfc-tag.png" alt="" style="width:clamp(42px,11vw,58px); height:auto; filter:grayscale(1) invert(1) brightness(1.6); animation:pulseRing 3.4s ease-in-out infinite alternate;">
+      <div style="font-size:clamp(13px,3.3vw,15px); line-height:1.55; opacity:0.85;">The tag you just touched lives in that same base. Tap it any time &mdash; for the story, or to reorder a refill in two taps.</div>
+    </div>
+  </section>
+
+  <figure style="margin:0; overflow:hidden;">
+    <img data-parallax="80" src="assets/hands-grinder-bw.png" alt="Ceramic Oryx grinder in hand" style="display:block; width:100%; height:clamp(250px,60vw,400px); object-fit:cover; filter:grayscale(1) contrast(1.04); will-change:transform;">
+  </figure>
+
+  <section style="padding:clamp(52px,11vw,80px) clamp(24px,6vw,40px); background:#fff;">
+    <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#6a6a6a;">04 &mdash; The pan renews itself</div>
+    <h3 data-reveal="mask" style="margin:16px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(28px,7vw,40px); line-height:1.08; letter-spacing:-1px;">Salt for a flavourable tomorrow.</h3>
+    <p data-reveal="up" style="margin:20px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; color:#3a3a3a;">Himalayan salt is blasted out with dynamite and never comes back. Sea salt now carries what we have poured into the ocean. Our aquifer is refilled by the same three streams that have fed it for millennia &mdash; we take only what the desert gives back, in step with the rainfall.</p>
+    <p data-reveal="up" style="margin:18px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; color:#3a3a3a;">Renewable at the source, refillable in your kitchen, and a percentage of every sale going to the &#801;Khomani San and Mier communities of the Kalahari.</p>
+  </section>
+
+  <figure style="margin:0; position:relative; overflow:hidden;">
+    <img data-parallax="70" src="assets/saltpan-3.png" alt="Kalahari salt pan at harvest" style="display:block; width:100%; height:clamp(230px,56vw,360px); object-fit:cover; filter:grayscale(1) contrast(1.06); will-change:transform;">
+    <figcaption data-reveal="up" style="position:absolute; left:clamp(24px,6vw,40px); bottom:clamp(18px,4vw,26px); color:#fff; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; text-shadow:0 1px 12px rgba(0,0,0,0.6);">Sun-dried &middot; unrefined &middot; renewable</figcaption>
+  </figure>
+
+  <section style="padding:clamp(52px,11vw,80px) clamp(24px,6vw,40px); background:#f4f4f2;">
+    <div style="display:flex; align-items:flex-start; gap:clamp(16px,4vw,24px);">
+      <img data-reveal="pop" src="assets/oryx-head.png" alt="" style="width:clamp(56px,14vw,84px); height:auto; flex-shrink:0; filter:grayscale(1);">
+      <div>
+        <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#6a6a6a;">05 &mdash; The name</div>
+        <h3 data-reveal="mask" style="margin:14px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(24px,6vw,34px); line-height:1.1; letter-spacing:-0.8px;">The animal that cannot live without salt</h3>
+      </div>
+    </div>
+    <p data-reveal="up" style="margin:20px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; color:#3a3a3a;">In July 2000 Samantha walked 75 miles across the Namib over seven days and met the Oryx gazelle face to face. It can go years without water but not weeks without salt, drinking the night dew straight through its hair. Strength and perseverance in the harshest place on earth &mdash; that is where the logo on your grinder came from.</p>
+  </section>
+
+  <section style="background:#111; color:#fff; padding:clamp(56px,12vw,88px) clamp(24px,6vw,40px) clamp(40px,9vw,60px);">
+    <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; opacity:0.55;">The ask</div>
+    <h2 style="margin:18px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(32px,8.4vw,50px); line-height:1.02; letter-spacing:-1.4px;">
+      <span style="display:block; overflow:hidden; padding-bottom:0.06em; margin-bottom:-0.06em;"><span data-reveal="line" style="display:block;">Refillable,</span></span>
+      <span style="display:block; overflow:hidden; padding-bottom:0.1em; margin-bottom:-0.1em;"><span data-reveal="line" data-delay="110" style="display:block;">not replaceable.</span></span>
+    </h2>
+    <p data-reveal="up" style="margin:22px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.72; opacity:0.85;">When the salt runs out, the grinder does not. Keep the glass, keep the ceramic mechanism, top it up from a refill box and start again. Twenty times over, and then some.</p>
+    <div style="margin-top:clamp(30px,7vw,42px); display:flex; flex-direction:column; gap:0;">
+      <div data-reveal="up" style="display:flex; align-items:baseline; gap:18px; padding:20px 0; border-top:1px solid rgba(255,255,255,0.25);">
+        <span data-count-to="800000" data-count-group="space" style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(24px,6.2vw,32px); flex:0 0 clamp(150px,40vw,200px);">800 000</span>
+        <span style="font-size:clamp(13px,3.3vw,15px); line-height:1.5; opacity:0.75;">grinders kept out of landfill in 2023 alone</span>
+      </div>
+      <div data-reveal="up" style="display:flex; align-items:baseline; gap:18px; padding:20px 0; border-top:1px solid rgba(255,255,255,0.25);">
+        <span data-count-to="3" data-count-suffix="M+" style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(24px,6.2vw,32px); flex:0 0 clamp(150px,40vw,200px);">3M+</span>
+        <span style="font-size:clamp(13px,3.3vw,15px); line-height:1.5; opacity:0.75;">bottles and grinder heads saved over five years</span>
+      </div>
+      <div data-reveal="up" style="display:flex; align-items:baseline; gap:18px; padding:20px 0; border-top:1px solid rgba(255,255,255,0.25); border-bottom:1px solid rgba(255,255,255,0.25);">
+        <span data-count-to="20" data-count-suffix="&times;" style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(24px,6.2vw,32px); flex:0 0 clamp(150px,40vw,200px);">20&times;</span>
+        <span style="font-size:clamp(13px,3.3vw,15px); line-height:1.5; opacity:0.75;">refills per ceramic grinder, minimum</span>
+      </div>
+    </div>
+    <div data-reveal="up" style="margin-top:clamp(28px,6vw,38px); font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(20px,5.2vw,28px); letter-spacing:-0.5px; background:linear-gradient(100deg,#fff 20%,#8a8a8a 40%,#fff 60%); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shimmer 5s linear infinite;">Refill Not Landfill.</div>
+  </section>
+
+  <figure style="margin:0; background:#fff; overflow:hidden;">
+    <img data-reveal="pop" src="assets/grinder-refill-box.png" alt="Oryx grinder and refill box" style="display:block; width:100%; height:auto; filter:grayscale(1);">
+  </figure>
+
+  <section style="padding:clamp(52px,11vw,80px) clamp(24px,6vw,40px); background:#fff;">
+    <div data-reveal="up" style="font-size:11px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#6a6a6a;">How the refill works</div>
+    <div style="margin-top:clamp(24px,5vw,32px); display:flex; flex-direction:column; gap:clamp(18px,4vw,24px);">
+      <div data-reveal="up" style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(16px,4vw,19px); color:#fff; background:#111; width:34px; height:34px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">1</span>
+        <div><div style="font-size:clamp(15px,3.8vw,17px); font-weight:600;">Tap the grinder</div><div style="margin-top:4px; font-size:clamp(13px,3.3vw,15px); line-height:1.6; color:#5a5a5a;">The NFC tag in the base opens this page. No app, no QR code, no typing.</div></div>
+      </div>
+      <div data-reveal="up" data-delay="90" style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(16px,4vw,19px); color:#fff; background:#111; width:34px; height:34px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">2</span>
+        <div><div style="font-size:clamp(15px,3.8vw,17px); font-weight:600;">Order your refill</div><div style="margin-top:4px; font-size:clamp(13px,3.3vw,15px); line-height:1.6; color:#5a5a5a;">Salt, chilli salt or Madagascan pepper &mdash; delivered, or find your nearest stockist.</div></div>
+      </div>
+      <div data-reveal="up" data-delay="180" style="display:flex; gap:16px; align-items:flex-start;">
+        <span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(16px,4vw,19px); color:#fff; background:#111; width:34px; height:34px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">3</span>
+        <div><div style="font-size:clamp(15px,3.8vw,17px); font-weight:600;">Keep grinding</div><div style="margin-top:4px; font-size:clamp(13px,3.3vw,15px); line-height:1.6; color:#5a5a5a;">Top up, twist the ceramic head back on, and the same grinder carries on for years.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative; background:#111; color:#fff; padding:clamp(64px,14vw,100px) clamp(24px,6vw,40px) calc(clamp(40px,9vw,60px) + env(safe-area-inset-bottom)); overflow:hidden;">
+    <img data-parallax="50" src="assets/saltpan-final.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05); opacity:0.42; will-change:transform;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,17,17,0.72) 0%, rgba(17,17,17,0.92) 100%);"></div>
+    <div style="position:relative;">
+      <h2 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(32px,8.4vw,50px); line-height:1.02; letter-spacing:-1.4px;">
+        <span style="display:block; overflow:hidden; padding-bottom:0.06em; margin-bottom:-0.06em;"><span data-reveal="line" style="display:block;">Keep the grinder.</span></span>
+        <span style="display:block; overflow:hidden; padding-bottom:0.1em; margin-bottom:-0.1em;"><span data-reveal="line" data-delay="110" style="display:block;">Refill the salt.</span></span>
+      </h2>
+      <p data-reveal="up" style="margin:20px 0 0; font-size:clamp(15px,3.8vw,17px); line-height:1.7; opacity:0.85; max-width:440px;">Order refills, meet the people behind the pan, and see the full range.</p>
+      <a data-reveal="up" href="{{ ctaUrl }}" target="_blank" rel="noopener" style="margin-top:clamp(28px,6vw,36px); display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; color:#111; padding:20px 24px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(16px,4.2vw,20px); letter-spacing:-0.3px; transition:background 0.35s ease, transform 0.35s cubic-bezier(0.2,0.7,0.2,1); position:relative; overflow:hidden;" style-hover="background:#e8e8e4; transform:translateY(-3px);" style-active="transform:translateY(0);">
+        <span>{{ ctaLabel }}</span>
+        <span style="font-size:clamp(18px,4.6vw,22px);">&rarr;</span>
+      </a>
+      <div style="margin-top:clamp(36px,8vw,52px); padding-top:24px; border-top:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <img src="assets/logo-white.png" alt="Oryx Desert Salt" style="height:clamp(32px,8vw,44px); width:auto; opacity:0.9;">
+        <div style="font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; opacity:0.55; text-align:right;">Oryx Desert Salt &middot; From the Kalahari</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;subtle&quot;,&quot;off&quot;],&quot;default&quot;:&quot;full&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;ctaUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://oryxdesertsalt.co.za&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Call to action&quot;},&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Shop refills&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Call to action&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.rootRef = React.createRef();
+    this.barRef = React.createRef();
+    this.heroRef = React.createRef();
+    this.videoRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const vid = this.videoRef.current;
+    if (vid) {
+      vid.muted = true;
+      vid.playsInline = true;
+      const tryPlay = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
+      vid.style.opacity = "0";
+      vid.style.transition = "opacity 0.8s ease";
+      vid.addEventListener("playing", () => { vid.style.opacity = "1"; });
+      // The host serves media without byte-range support, which WebKit needs.
+      // Pull the file once and hand the element a seekable blob URL instead.
+      const SRC = "assets/oryx-hero.mp4";
+      fetch(SRC).then(r => r.blob()).then(b => {
+        this.blobUrl = URL.createObjectURL(b);
+        vid.src = this.blobUrl;
+        vid.load();
+        tryPlay();
+      }).catch(() => { vid.src = SRC; vid.load(); tryPlay(); });
+      this.onTap = () => tryPlay();
+      document.addEventListener("touchstart", this.onTap, { once: true, passive: true });
+      document.addEventListener("click", this.onTap, { once: true });
+      this.vidIo = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) tryPlay(); else vid.pause(); });
+      }, { threshold: 0.05 });
+      this.vidIo.observe(vid);
+    }
+    const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    this.motion = (this.props.motion ?? "full");
+    if (reduced || this.motion === "off") return;
+
+    const EASE = "cubic-bezier(0.16,1,0.3,1)";
+    const items = Array.from(root.querySelectorAll("[data-reveal]"));
+    const start = {
+      up: "opacity:0; transform:translate3d(0,26px,0);",
+      line: "transform:translate3d(0,108%,0);",
+      mask: "opacity:0; transform:translate3d(0,22px,0);",
+      pop: "opacity:0; transform:scale(0.92);"
+    };
+    items.forEach(el => {
+      const k = el.getAttribute("data-reveal");
+      el.style.cssText += ";" + (start[k] || start.up) + "will-change:transform,opacity;";
+    });
+
+    const show = el => {
+      const d = parseInt(el.getAttribute("data-delay") || "0", 10);
+      el.style.transition = "opacity 0.9s " + EASE + " " + d + "ms, transform 1.05s " + EASE + " " + d + "ms";
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      const c = el.querySelector("[data-count-to]") || (el.hasAttribute("data-count-to") ? el : null);
+      if (c) this.countUp(c);
+      el.querySelectorAll("[data-count-to]").forEach(n => this.countUp(n));
+    };
+
+    const targetOf = el => (el.getAttribute("data-reveal") === "line" ? el.parentElement : el);
+    const revealFrom = t => {
+      const el = t.matches("[data-reveal]") ? t : t.querySelector('[data-reveal="line"]');
+      if (el) show(el);
+    };
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { revealFrom(e.target); this.io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
+    items.forEach(el => this.io.observe(targetOf(el)));
+    requestAnimationFrame(() => {
+      items.forEach(el => {
+        const r = targetOf(el).getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.9) { show(el); this.io.unobserve(targetOf(el)); }
+      });
+    });
+
+    const parallax = Array.from(root.querySelectorAll("[data-parallax]"));
+    const hero = this.heroRef.current;
+    const bar = this.barRef.current;
+    let ticking = false;
+    const frame = () => {
+      ticking = false;
+      const vh = window.innerHeight;
+      if (this.motion !== "subtle") {
+        parallax.forEach(img => {
+          const r = img.parentElement.getBoundingClientRect();
+          if (r.bottom < -200 || r.top > vh + 200) return;
+          const p = (vh - r.top) / (vh + r.height) - 0.5;
+          const strength = parseFloat(img.getAttribute("data-parallax")) || 60;
+          img.style.transform = "translate3d(0," + (-p * strength).toFixed(2) + "px,0) scale(1.16)";
+        });
+      }
+      if (hero) {
+        const y = window.scrollY || window.pageYOffset;
+        const t = Math.min(1, Math.max(0, (y - vh * 0.18) / (vh * 0.72)));
+        hero.style.opacity = String(1 - t * 0.9);
+        hero.style.transform = "translate3d(0," + (t * 26).toFixed(1) + "px,0)";
+      }
+      if (bar) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? Math.min(100, ((window.scrollY || 0) / max) * 100) : 0) + "%";
+      }
+    };
+    this.onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    window.addEventListener("resize", this.onScroll);
+    frame();
+  }
+
+  countUp(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = "1";
+    const to = parseFloat(el.getAttribute("data-count-to"));
+    const suffix = el.getAttribute("data-count-suffix") || "";
+    const group = el.getAttribute("data-count-group");
+    const fmt = v => (group === "space" ? Math.round(v).toLocaleString("en-US").replace(/,/g, "\u2009") : String(Math.round(v))) + suffix;
+    const dur = 1400, t0 = performance.now();
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(to * e);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    el.textContent = fmt(0);
+    requestAnimationFrame(step);
+  }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.vidIo) this.vidIo.disconnect();
+    if (this.blobUrl) URL.revokeObjectURL(this.blobUrl);
+    if (this.onScroll) {
+      window.removeEventListener("scroll", this.onScroll);
+      window.removeEventListener("resize", this.onScroll);
+    }
+  }
+
+  renderVals() {
+    return {
+      rootRef: this.rootRef,
+      barRef: this.barRef,
+      heroRef: this.heroRef,
+      videoRef: this.videoRef,
+      ctaUrl: this.props.ctaUrl ?? "https://oryxdesertsalt.co.za",
+      ctaLabel: this.props.ctaLabel ?? "Shop refills"
+    };
+  }
+}
+</script>
+</body>
+</html>

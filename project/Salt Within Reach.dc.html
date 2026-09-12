@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html, body { margin: 0; padding: 0; background: #111; }
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+a { color: #111; text-decoration: none; }
+a:hover { color: #555; }
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<section data-label="Cover" data-speaker-notes="Good morning. We're Group 2 and this is Salt Within Reach — our proposal for how Oryx Desert Salt can turn the value already built into its product into consumer understanding, engagement and repeat purchase." style="position:relative; overflow:hidden; background:#111; color:#fff; font-family:Poppins, sans-serif;">
+  <img src="assets/oryx-hero.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%;">
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.78) 100%);"></div>
+  <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:44px 100px;">
+    <div style="display:flex; align-items:center; gap:56px; font-size:28px; font-weight:500; letter-spacing:0.5px;">
+      <span>Challenge</span><span style="opacity:0.7;">Research</span><span style="opacity:0.7;">Strategy</span><span style="opacity:0.7;">Solution</span><span style="opacity:0.7;">Plan</span>
+    </div>
+    <img src="assets/logo-white.png" alt="Oryx Desert Salt" style="width:120px; height:120px; object-fit:contain;">
+  </div>
+  <div style="position:absolute; left:100px; right:100px; bottom:90px; display:flex; flex-direction:column; gap:28px;">
+    <div style="font-size:28px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.85;">BCom Innovation Challenge · Oryx Desert Salt</div>
+    <h1 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:168px; line-height:0.95; letter-spacing:-4px;">Salt Within Reach</h1>
+    <p style="margin:0; max-width:1100px; font-size:35px; line-height:1.4; opacity:0.9;">Turning Oryx Desert Salt's differentiation into consumer understanding, engagement and repeat purchase.</p>
+    <div style="display:flex; align-items:center; gap:28px; margin-top:16px; font-size:26px; opacity:0.8; flex-wrap:wrap;">
+      <span style="font-weight:600;">Group 2</span><span>Michael Bonthuyzen</span><span>Jenna Merrington</span><span>Natasha Knoetze</span><span>Anita Brand</span><span>Nuhaa Hendricks</span><span>Nicolette Channelor</span>
+    </div>
+  </div>
+</section>
+
+<section data-label="Agenda" data-speaker-notes="Four parts: what the research told us, who we're talking to and how we'll position, the Salt Within Reach campaign itself, and how we roll it out and measure it." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:grid; grid-template-columns:1fr 1fr; gap:80px; font-family:Poppins, sans-serif;">
+  <div style="display:flex; flex-direction:column; justify-content:space-between;">
+    <div>
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Agenda</div>
+      <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:88px; line-height:1; letter-spacing:-2px;">Four parts,<br>one story</h2>
+    </div>
+    <img src="assets/oryx-head.png" alt="" style="width:260px; height:auto; align-self:flex-start;">
+  </div>
+  <div style="display:flex; flex-direction:column; justify-content:center;">
+    <div style="display:flex; align-items:baseline; gap:40px; padding:36px 0; border-top:2px solid #111;">
+      <span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:80px;">01</span>
+      <div><div style="font-size:39px; font-weight:600;">Research</div><div style="font-size:28px; color:#555; margin-top:6px;">The challenge, what drives salt choice, the credibility gap</div></div>
+    </div>
+    <div style="display:flex; align-items:baseline; gap:40px; padding:36px 0; border-top:2px solid #111;">
+      <span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:80px;">02</span>
+      <div><div style="font-size:39px; font-weight:600;">Audience &amp; Strategy</div><div style="font-size:28px; color:#555; margin-top:6px;">Who we target, goal, objectives, positioning</div></div>
+    </div>
+    <div style="display:flex; align-items:baseline; gap:40px; padding:36px 0; border-top:2px solid #111;">
+      <span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:80px;">03</span>
+      <div><div style="font-size:39px; font-weight:600;">The Solution</div><div style="font-size:28px; color:#555; margin-top:6px;">Salt Within Reach: refill system, NFC, education</div></div>
+    </div>
+    <div style="display:flex; align-items:baseline; gap:40px; padding:36px 0; border-top:2px solid #111; border-bottom:2px solid #111;">
+      <span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:80px;">04</span>
+      <div><div style="font-size:39px; font-weight:600;">Implementation &amp; Measurement</div><div style="font-size:28px; color:#555; margin-top:6px;">Six-month rollout, KPIs, recommendations</div></div>
+    </div>
+  </div>
+</section>
+
+<section data-label="The client challenge" data-speaker-notes="This is the brief as Oryx gave it to us. Note the last clause — without compromising the premium, minimalist identity. That constraint shaped everything. Our diagnosis: Oryx doesn't have a differentiation problem. It has a communication problem — consumers don't yet recognise the value already built into the product." style="position:relative; background:#111; color:#fff; display:grid; grid-template-columns:1fr 1fr; font-family:Poppins, sans-serif; overflow:hidden;">
+  <div style="padding:100px 80px 80px 100px; display:flex; flex-direction:column; justify-content:space-between;">
+    <div>
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">The client challenge</div>
+      <div style="margin-top:56px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:140px; line-height:0.6;">&ldquo;</div>
+      <blockquote style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:500; font-size:48px; line-height:1.3; letter-spacing:-0.5px;">How can Oryx communicate product information and value so it strengthens consumer understanding, elevates engagement and enables repeat purchases &mdash; without compromising its premium, minimalist brand identity?</blockquote>
+    </div>
+    <p style="margin:0; font-size:31px; line-height:1.45; opacity:0.75; max-width:720px;">Oryx's challenge is not a lack of differentiation. It is ensuring consumers recognise the value already built into the product.</p>
+  </div>
+  <div style="position:relative;">
+    <img src="assets/coffee-bw.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:contrast(1.04);">
+    <div style="position:absolute; inset:0; background:linear-gradient(90deg, #111 0%, rgba(17,17,17,0) 30%);"></div>
+  </div>
+</section>
+
+<section data-label="01 Research" data-speaker-notes="Part one — what the research told us. We surveyed 40 respondents across South African provinces and age groups, and reviewed secondary studies on salt purity and microplastics." style="position:relative; overflow:hidden; background:#111; color:#fff; font-family:Poppins, sans-serif;">
+  <img src="assets/saltpan-2.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:contrast(1.08);">
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.75) 100%);"></div>
+  <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:44px 100px;">
+    <div style="display:flex; align-items:center; gap:56px; font-size:28px; font-weight:500;">
+      <span style="opacity:0.7;">Challenge</span><span>Research</span><span style="opacity:0.7;">Strategy</span><span style="opacity:0.7;">Solution</span><span style="opacity:0.7;">Plan</span>
+    </div>
+    <img src="assets/logo-white.png" alt="" style="width:120px; height:120px; object-fit:contain;">
+  </div>
+  <div style="position:absolute; left:100px; right:100px; bottom:90px; display:flex; align-items:flex-end; gap:60px;">
+    <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:260px; line-height:0.8; letter-spacing:-10px;">01</div>
+    <div style="padding-bottom:16px;">
+      <h2 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:88px; line-height:1; letter-spacing:-2px;">Research</h2>
+      <p style="margin:20px 0 0; font-size:33px; opacity:0.85;">40 respondents · secondary purity studies · client feedback</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="What drives a salt purchase" data-speaker-notes="Brand trust, taste and price dominate. Sustainability — the thing Oryx has led with — convinces only one in eight. That doesn't mean sustainability is worthless; it means it can't carry the message alone." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Research · Primary survey, n = 40</div>
+  <h2 style="margin:24px 0 64px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px; max-width:1500px;">Brand trust, taste and price drive salt choice &mdash; sustainability alone convinces one in eight</h2>
+  <div style="display:flex; flex-direction:column; gap:26px; flex:1; justify-content:center;">
+    <div style="display:flex; align-items:center; gap:32px;"><div style="width:300px; font-size:33px; font-weight:500;">Brand trust</div><div style="flex:1; height:44px; background:#eee;"><div style="width:100%; height:100%; background:#111;"></div></div><div style="width:130px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:35px; text-align:right;">65.0%</div></div>
+    <div style="display:flex; align-items:center; gap:32px;"><div style="width:300px; font-size:33px; font-weight:500;">Taste</div><div style="flex:1; height:44px; background:#eee;"><div style="width:96%; height:100%; background:#111;"></div></div><div style="width:130px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:35px; text-align:right;">62.5%</div></div>
+    <div style="display:flex; align-items:center; gap:32px;"><div style="width:300px; font-size:33px; font-weight:500;">Price</div><div style="flex:1; height:44px; background:#eee;"><div style="width:85%; height:100%; background:#111;"></div></div><div style="width:130px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:35px; text-align:right;">55.0%</div></div>
+    <div style="display:flex; align-items:center; gap:32px;"><div style="width:300px; font-size:33px; font-weight:500;">Health benefits</div><div style="flex:1; height:44px; background:#eee;"><div style="width:54%; height:100%; background:#555;"></div></div><div style="width:130px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:35px; text-align:right;">35.0%</div></div>
+    <div style="display:flex; align-items:center; gap:32px;"><div style="width:300px; font-size:33px; font-weight:500;">Packaging</div><div style="flex:1; height:44px; background:#eee;"><div style="width:42%; height:100%; background:#555;"></div></div><div style="width:130px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:35px; text-align:right;">27.5%</div></div>
+    <div style="display:flex; align-items:center; gap:32px;"><div style="width:300px; font-size:33px; font-weight:500;">Sustainability</div><div style="flex:1; height:44px; background:#eee;"><div style="width:19%; height:100%; background:#999;"></div></div><div style="width:130px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:35px; text-align:right;">12.5%</div></div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:40px; font-size:26px; color:#555;"><span>Share of respondents naming each factor as a purchase driver</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="Consumers are open" data-speaker-notes="The good news. Two thirds already buy Himalayan or pink salt — they're comfortable paying for a differentiated salt. Eighty percent say clear product information would make them more likely to buy Oryx. And nearly half had simply never heard of the brand. Awareness and clarity, not disinterest, are the barriers." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Research · Key insight</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px; max-width:1500px;">Consumers are open &mdash; if the story is told clearly</h2>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:60px; align-items:center; margin-top:40px;">
+    <div style="border-top:3px solid #111; padding-top:40px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:150px; line-height:1; letter-spacing:-6px;">67.5%</div>
+      <p style="margin:28px 0 0; font-size:31px; line-height:1.45; color:#333;">already prefer Himalayan or pink salt &mdash; comfort with premium, differentiated salt exists.</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:40px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:150px; line-height:1; letter-spacing:-6px;">80%</div>
+      <p style="margin:28px 0 0; font-size:31px; line-height:1.45; color:#333;">would be much more likely to buy Oryx if product information were clearly presented.</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:40px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:150px; line-height:1; letter-spacing:-6px;">45%</div>
+      <p style="margin:28px 0 0; font-size:31px; line-height:1.45; color:#333;">had never heard of Oryx before the survey &mdash; awareness, not disinterest, is the barrier.</p>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; font-size:26px; color:#555;"><span>Primary survey, n = 40</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="Kalahari purity story" data-speaker-notes="Secondary research gives Oryx a story competitors can't copy. Over 90 percent of tested global salt brands contain microplastics, with sea salt worst. Himalayan salt's mineral content is too low to matter. Oryx's salt comes from ancient underground lakes in the Kalahari — land-locked, sun-dried, no marine pathway." style="position:relative; background:#111; color:#fff; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">Research · Secondary</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">Kalahari origin is a purity story competitors can't claim</h2>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr; gap:80px; margin-top:56px; min-height:0;">
+    <div style="position:relative; background:#fff; border:2px solid #fff; overflow:hidden;">
+      <img src="assets/map.png" alt="Kalahari Desert map showing the Oryx salt pan" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.04);">
+      <div style="position:absolute; left:0; right:0; bottom:0; padding:20px 28px; background:rgba(17,17,17,0.85); font-size:26px; color:#fff;">Sun-dried, land-locked Kalahari salt pans &mdash; no marine microplastic pathway</div>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="border-top:2px solid #fff; padding-top:24px;">
+        <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:72px; line-height:1; letter-spacing:-2px;">90%+</div>
+        <p style="margin:16px 0 0; font-size:28px; line-height:1.4; opacity:0.85;">of 39 tested global salt brands contained microplastics; sea salt was the most contaminated (Kim et al., 2018)</p>
+      </div>
+      <div style="border-top:2px solid #fff; padding-top:24px;">
+        <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:72px; line-height:1; letter-spacing:-2px;">97&ndash;98%</div>
+        <p style="margin:16px 0 0; font-size:28px; line-height:1.4; opacity:0.85;">sodium chloride in Himalayan salt &mdash; mineral content too low for meaningful health benefit (Fayet-Moore et al., 2020)</p>
+      </div>
+      <div style="border-top:2px solid #fff; border-bottom:2px solid #fff; padding:24px 0 28px;">
+        <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:72px; line-height:1; letter-spacing:-2px;">8 million tons</div>
+        <p style="margin:16px 0 0; font-size:28px; line-height:1.4; opacity:0.85;">of plastic enters the oceans every year, feeding microplastic contamination of sea salt</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Three barriers" data-speaker-notes="So why hasn't the story landed? Three barriers. Sustainability isn't the dominant driver. Mineral detail overwhelms rather than persuades. And a premium brand can tip into feeling unapproachable. Underneath all three sits habit — people stay with the salt they know unless given a concrete reason to switch." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Research · Diagnosis</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">Three barriers stand between the product and the buyer</h2>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:48px; align-items:start; margin-top:72px;">
+    <div style="border-top:3px solid #111; padding-top:36px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">01</div>
+      <h3 style="margin:24px 0 20px; font-size:39px; font-weight:600; line-height:1.2;">Sustainability isn't the dominant driver</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">Only 12.5% cite environmental sustainability as a motivator, versus 65% for brand trust. Leading with it alone won't convert buyers.</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:36px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">02</div>
+      <h3 style="margin:24px 0 20px; font-size:39px; font-weight:600; line-height:1.2;">Product information can overwhelm</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">Oryx wants to educate on quality and minerals, but scientific detail risks overwhelming everyday consumers rather than building authority.</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:36px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">03</div>
+      <h3 style="margin:24px 0 20px; font-size:39px; font-weight:600; line-height:1.2;">Premium risks feeling unapproachable</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">An authoritative, premium identity must still feel within reach &mdash; organic and lighthearted &mdash; so it doesn't intimidate everyday buyers.</p>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; font-size:26px; color:#555;"><span>Root cause: habit, trust and switching cost &mdash; buyers need a concrete reason to switch</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="02 Audience & Strategy" data-speaker-notes="Part two — who we're talking to and how we position. Emphasis here: we segment on behaviour, not values." style="position:relative; overflow:hidden; background:#111; color:#fff; font-family:Poppins, sans-serif;">
+  <img src="assets/saltpan-1.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:contrast(1.1);">
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.75) 100%);"></div>
+  <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:44px 100px;">
+    <div style="display:flex; align-items:center; gap:56px; font-size:28px; font-weight:500;">
+      <span style="opacity:0.7;">Challenge</span><span style="opacity:0.7;">Research</span><span>Strategy</span><span style="opacity:0.7;">Solution</span><span style="opacity:0.7;">Plan</span>
+    </div>
+    <img src="assets/logo-white.png" alt="" style="width:120px; height:120px; object-fit:contain;">
+  </div>
+  <div style="position:absolute; left:100px; right:100px; bottom:90px; display:flex; align-items:flex-end; gap:60px;">
+    <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:260px; line-height:0.8; letter-spacing:-10px;">02</div>
+    <div style="padding-bottom:16px;">
+      <h2 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:88px; line-height:1; letter-spacing:-2px;">Audience &amp; Strategy</h2>
+      <p style="margin:20px 0 0; font-size:33px; opacity:0.85;">Segment on behaviour · one goal · three objectives · a positioning</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="Who we're talking to" data-speaker-notes="Primary target: value-conscious households. Practical, regular salt buyers who'll pay a premium when the benefit is clear. Existing Himalayan buyers are the natural entry point. Secondary: the conscious culinary cook, who aligns with the refill story — but we won't narrow the campaign to them. There's a real attitude–behaviour gap: 88% hold environmental values, only 22% act on them through refills." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Audience &amp; Strategy · Target audience</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">We segment on behaviour, not sustainability values</h2>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:44px;">
+    <div style="background:#111; color:#fff; padding:40px 48px; display:flex; flex-direction:column; gap:20px;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:4px; text-transform:uppercase; opacity:0.7;">Primary</div>
+      <h3 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:52px; line-height:1.1;">Value-conscious households</h3>
+      <ul style="margin:0; padding-left:32px; font-size:28px; line-height:1.4; display:flex; flex-direction:column; gap:8px;">
+        <li>Regular, practical buyers &mdash; prioritise taste, quality, brand and price</li>
+        <li>Pay a premium when the benefit is clear and justified</li>
+        <li>Respond to health, purity and refillability as value-adds</li>
+        <li>Himalayan/pink buyers are the natural entry point</li>
+      </ul>
+    </div>
+    <div style="border:3px solid #111; padding:40px 48px; display:flex; flex-direction:column; gap:20px;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#555;">Secondary</div>
+      <h3 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:52px; line-height:1.1;">The conscious culinary cook</h3>
+      <ul style="margin:0; padding-left:32px; font-size:28px; line-height:1.4; display:flex; flex-direction:column; gap:8px; color:#333;">
+        <li>Aligns naturally with the refill and sustainability story</li>
+        <li>Important, but the campaign must not narrow to this eco-first group</li>
+        <li>No correlation found between digital engagement and the wider target</li>
+        <li>NFC is a convenience for everyone, not a filter on who we target</li>
+      </ul>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:28px; font-size:26px; color:#555;"><span>Attitude&ndash;behaviour gap: stated environmental values rarely convert to purchase on their own (Munro et al., 2023; Lakhan &amp; Ng, 2025)</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="Goal and objectives" data-speaker-notes="Our goal: grow the number of value-oriented households using Oryx by building brand knowledge, improving understanding of functional value, and encouraging refill behaviour. Three SMART objectives sit under it — awareness, comprehension, and the one that matters most commercially: refill conversion." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Audience &amp; Strategy · Goal &amp; objectives</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">One goal, three SMART objectives</h2>
+  <p style="margin:36px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:500; font-size:37px; line-height:1.35; max-width:1600px; color:#333;">Grow the number of value-oriented household consumers who use Oryx Desert Salt by increasing brand knowledge, improving understanding of functional value, and encouraging refill behaviour.</p>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:48px; align-items:start; align-content:end; margin-top:48px;">
+    <div style="border-top:3px solid #111; padding-top:32px; display:flex; flex-direction:column; gap:18px;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#555;">Awareness</div>
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px;">+15%</div>
+      <p style="margin:0; font-size:28px; line-height:1.45; color:#333;">aided awareness vs. the 45% baseline, within 6 months of launch</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:32px; display:flex; flex-direction:column; gap:18px;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#555;">Understanding</div>
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px;">60%</div>
+      <p style="margin:0; font-size:28px; line-height:1.45; color:#333;">of exposed consumers name two key benefits (purity + ceramic grinder), within 3 months</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:32px; display:flex; flex-direction:column; gap:18px;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:#555;">Refill conversion</div>
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px;">30%</div>
+      <p style="margin:0; font-size:28px; line-height:1.45; color:#333;">first-refill conversion within 90 days of grinder purchase, measured over 6 months</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="Positioning" data-speaker-notes="Strategic direction: More Than Meets the Grind. We pivot from niche ethical alternative to a commanding premium position. Sustainability becomes the supporting benefit; quality, purity, the ceramic grinder and convenience lead. No single competitor — Cerebos, Cape Herb and Spice, Maldon — combines Kalahari origin, ceramic hardware, a refill system and NFC transparency." style="position:relative; background:#111; color:#fff; padding:100px 100px 80px; display:grid; grid-template-columns:1.2fr 1fr; gap:100px; font-family:Poppins, sans-serif;">
+  <div style="display:flex; flex-direction:column;">
+    <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">Audience &amp; Strategy · Positioning</div>
+    <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px;">More Than<br>Meets the Grind</h2>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-end;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:120px; line-height:0.5; opacity:0.5;">&ldquo;</div>
+      <blockquote style="margin:16px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:500; font-size:37px; line-height:1.35;">For consumers who want a premium, high-quality salt experience, Oryx Desert Salt is the Kalahari-origin brand that makes everyday cooking a premium ritual &mdash; pairing a durable ceramic grinder and refill system with full product transparency through its NFC experience.</blockquote>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; justify-content:flex-end; gap:0;">
+    <div style="font-size:26px; font-weight:600; letter-spacing:4px; text-transform:uppercase; opacity:0.7; padding-bottom:20px;">What leads, what supports</div>
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:26px 0; border-top:1px solid rgba(255,255,255,0.35); font-size:33px;"><span style="font-weight:600;">Quality &amp; purity</span><span style="opacity:0.7; font-size:26px; letter-spacing:3px;">LEADS</span></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:26px 0; border-top:1px solid rgba(255,255,255,0.35); font-size:33px;"><span style="font-weight:600;">Ceramic grinder</span><span style="opacity:0.7; font-size:26px; letter-spacing:3px;">LEADS</span></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:26px 0; border-top:1px solid rgba(255,255,255,0.35); font-size:33px;"><span style="font-weight:600;">Convenience &amp; value</span><span style="opacity:0.7; font-size:26px; letter-spacing:3px;">LEADS</span></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:26px 0; border-top:1px solid rgba(255,255,255,0.35); border-bottom:1px solid rgba(255,255,255,0.35); font-size:33px;"><span style="font-weight:600;">Sustainability</span><span style="opacity:0.7; font-size:26px; letter-spacing:3px;">SUPPORTS</span></div>
+    <p style="margin:32px 0 0; font-size:27px; line-height:1.45; opacity:0.75;">No single competitor &mdash; Cerebos, Cape Herb &amp; Spice, Maldon &mdash; replicates Kalahari origin + ceramic hardware + refill system + NFC transparency.</p>
+  </div>
+</section>
+
+<section data-label="Engagement journey" data-speaker-notes="The strategy runs as a four-stage journey. NFC and the founder story reach the 45% who are unaware. Quality, taste and price justify the first purchase. Grinder ownership converts into refills. Satisfied refillers become advocates. B2C drives the front end; B2B retail partnerships expand shelf presence." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Audience &amp; Strategy · Engagement model</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">A four-stage journey from awareness to advocacy</h2>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0; align-items:stretch; margin-top:72px;">
+    <div style="display:flex; flex-direction:column; gap:24px; padding:48px 40px 48px 0; border-top:3px solid #111;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:120px; line-height:0.9; letter-spacing:-5px;">1</div>
+      <h3 style="margin:0; font-size:44px; font-weight:600;">Awareness</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">NFC and the founder story reach the 45% unaware segment</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px; padding:48px 40px; border-top:3px solid #111; border-left:1px solid #ccc;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:120px; line-height:0.9; letter-spacing:-5px;">2</div>
+      <h3 style="margin:0; font-size:44px; font-weight:600;">Trial</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">Quality, taste and price justify the first purchase</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px; padding:48px 40px; border-top:3px solid #111; border-left:1px solid #ccc;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:120px; line-height:0.9; letter-spacing:-5px;">3</div>
+      <h3 style="margin:0; font-size:44px; font-weight:600;">Refill</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">Grinder ownership converts into repeat refill orders</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px; padding:48px 0 48px 40px; border-top:3px solid #111; border-left:1px solid #ccc;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:120px; line-height:0.9; letter-spacing:-5px;">4</div>
+      <h3 style="margin:0; font-size:44px; font-weight:600;">Advocacy</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">Satisfied refillers become word-of-mouth advocates</p>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; font-size:26px; color:#555;"><span>B2C (digital, packaging, POS) drives awareness to repeat purchase · B2B retail partnerships expand shelf availability</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="03 The Solution" data-speaker-notes="Part three — the campaign itself." style="position:relative; overflow:hidden; background:#111; color:#fff; font-family:Poppins, sans-serif;">
+  <img src="assets/saltpan-3.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:contrast(1.1);">
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.75) 100%);"></div>
+  <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:44px 100px;">
+    <div style="display:flex; align-items:center; gap:56px; font-size:28px; font-weight:500;">
+      <span style="opacity:0.7;">Challenge</span><span style="opacity:0.7;">Research</span><span style="opacity:0.7;">Strategy</span><span>Solution</span><span style="opacity:0.7;">Plan</span>
+    </div>
+    <img src="assets/logo-white.png" alt="" style="width:120px; height:120px; object-fit:contain;">
+  </div>
+  <div style="position:absolute; left:100px; right:100px; bottom:90px; display:flex; align-items:flex-end; gap:60px;">
+    <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:260px; line-height:0.8; letter-spacing:-10px;">03</div>
+    <div style="padding-bottom:16px;">
+      <h2 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:88px; line-height:1; letter-spacing:-2px;">The Solution</h2>
+      <p style="margin:20px 0 0; font-size:33px; opacity:0.85;">Salt Within Reach &mdash; a campaign built on the refill system and NFC</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="Introducing Salt Within Reach" data-speaker-notes="Salt Within Reach is a campaign to boost awareness, deepen understanding of Oryx's value and drive repeat purchase. Four components. It leads with origin, quality, the ceramic grinder and the refill system; sustainability sits behind them. It responds directly to the 80% who said clear information would make them buy." style="position:relative; background:#fff; color:#111; display:grid; grid-template-columns:1fr 1fr; font-family:Poppins, sans-serif; overflow:hidden;">
+  <div style="padding:100px 60px 80px 100px; display:flex; flex-direction:column;">
+    <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">The Solution · Campaign</div>
+    <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">Introducing Salt Within Reach</h2>
+    <p style="margin:16px 0 0; font-size:28px; line-height:1.4; color:#333;">One campaign, four components &mdash; leading with Kalahari origin, quality, the ceramic grinder and the refill system.</p>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-end; gap:0; margin-top:16px;">
+      <div style="display:flex; gap:32px; align-items:baseline; padding:12px 0; border-top:2px solid #111;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">01</span><div><div style="font-size:33px; font-weight:600;">Product education</div><div style="font-size:25px; color:#555; margin-top:2px;">Origin, purity and quality &mdash; simplified, at a glance</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:12px 0; border-top:2px solid #111;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">02</span><div><div style="font-size:33px; font-weight:600;">NFC tag on the grinder</div><div style="font-size:25px; color:#555; margin-top:2px;">Tap for product, story and refill information</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:12px 0; border-top:2px solid #111;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">03</span><div><div style="font-size:33px; font-weight:600;">Grinder &amp; refill promotion</div><div style="font-size:25px; color:#555; margin-top:2px;">Convenience and value first, sustainability alongside</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:24px 0; border-top:2px solid #111; border-bottom:2px solid #111;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">04</span><div><div style="font-size:33px; font-weight:600;">Social &amp; point-of-sale</div><div style="font-size:25px; color:#555; margin-top:2px;">Consistent message in-store and online</div></div></div>
+    </div>
+  </div>
+  <div style="position:relative; background:#fff;">
+    <img src="assets/refill.png" alt="Oryx grinder and refill box" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; filter:contrast(1.04);">
+  </div>
+</section>
+
+<section data-label="The two concepts" data-speaker-notes="Two linked concepts carry the campaign. Salt Within Reach — More Than Meets the Grind — puts an NFC tag in the ceramic grinder, so one tap unlocks origin, transparency and the founder's story. Refillable Not Replaceable — Refill Not Landfill — reframes the grinder from a disposable dispenser into a permanent culinary tool, and makes refilling part of the cooking routine rather than a chore." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">The Solution · Concepts</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">Two linked concepts carry the campaign</h2>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:48px;">
+    <div style="background:#111; color:#fff; padding:52px 52px 44px; display:flex; flex-direction:column; gap:24px;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">Concept 01</div>
+      <h3 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:52px; line-height:1.05;">Salt Within Reach</h3>
+      <div style="font-size:31px; font-weight:500; opacity:0.85;">More Than Meets the Grind</div>
+      <p style="margin:0; font-size:28px; line-height:1.45; opacity:0.85;">An NFC tag embedded in the ceramic grinder. One tap of a phone unlocks an uncluttered mobile brand experience that brings origin, scientific transparency and the founder's story within reach.</p>
+    </div>
+    <div style="border:3px solid #111; padding:52px 52px 44px; display:flex; flex-direction:column; gap:24px;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Concept 02</div>
+      <h3 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:52px; line-height:1.05;">Refillable Not Replaceable</h3>
+      <div style="font-size:31px; font-weight:500; color:#555;">Refill Not Landfill</div>
+      <p style="margin:0; font-size:28px; line-height:1.45; color:#333;">Reframes the grinder from a disposable dispenser into a permanent culinary tool &mdash; targeting refill abandonment by celebrating the lifespan of the ceramic mechanism and building refilling into daily cooking.</p>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; font-size:26px; color:#555;"><span>One tells consumers why Oryx is worth choosing · the other keeps them coming back</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="How the campaign shows up" data-speaker-notes="Three touchpoints carry one message. At the shelf, point-of-sale materials put origin, purity and the ceramic grinder front and centre, with the refill box beside the grinder so the 'buy one grinder' idea is visible at the moment of choice. On the grinder, the NFC tag opens the landing page. Online, educational content and social media carry the same story, with a mobile-friendly site for refills." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">The Solution · Touchpoints</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">Three touchpoints carry one simple message</h2>
+  <p style="margin:28px 0 0; font-size:31px; line-height:1.45; color:#333; max-width:1500px;">Kalahari origin, purity, a ceramic grinder you buy once &mdash; and a refill that costs less than a new grinder.</p>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:48px; align-items:start; margin-top:64px;">
+    <div style="border-top:3px solid #111; padding-top:36px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">01</div>
+      <h3 style="margin:24px 0 20px; font-size:41px; font-weight:600; line-height:1.15;">At the shelf</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">Point-of-sale materials lead with origin, purity and the ceramic mechanism. The refill box sits beside the grinder so &ldquo;buy one grinder&rdquo; is visible at the moment of choice.</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:36px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">02</div>
+      <h3 style="margin:24px 0 20px; font-size:41px; font-weight:600; line-height:1.15;">On the grinder</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">An NFC tag in the grinder opens the Salt Within Reach landing page with a tap &mdash; no app, no QR, nothing printed on the label.</p>
+    </div>
+    <div style="border-top:3px solid #111; padding-top:36px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">03</div>
+      <h3 style="margin:24px 0 20px; font-size:41px; font-weight:600; line-height:1.15;">Online</h3>
+      <p style="margin:0; font-size:30px; line-height:1.45; color:#333;">Educational digital content and social media tell the same story in the same words, backed by a mobile-friendly site where refills are one step away.</p>
+    </div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; font-size:26px; color:#555;"><span>Sustainability appears at every touchpoint &mdash; always alongside convenience, longevity and cost saving</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="What an NFC tag is" data-speaker-notes="A quick explanation of the technology. An NFC tag is a thin passive chip and antenna — about the size of a coin, under a millimetre thick. It has no battery: the phone's own field powers it. Tap a phone within a few centimetres and it opens a web link instantly — no app, no QR code, nothing printed on the label. For Oryx, one tag sits under the base of the ceramic grinder. It costs cents at volume, survives the life of the grinder, and because the link is a web address, Oryx can change what it points to at any time without touching the product." style="position:relative; background:#111; color:#fff; display:grid; grid-template-columns:1fr 1.15fr; font-family:Poppins, sans-serif; overflow:hidden;">
+  <div style="position:relative; display:flex; align-items:center; justify-content:center; padding:100px 40px 80px 100px;">
+    <img src="assets/nfc-tag.png" alt="An NFC tag: antenna coil with a small chip" style="width:100%; max-width:600px; height:auto; object-fit:contain;">
+  </div>
+  <div style="padding:100px 100px 80px 40px; display:flex; flex-direction:column;">
+    <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">The Solution · The technology</div>
+    <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">What an NFC tag actually is</h2>
+    <p style="margin:24px 0 0; font-size:30px; line-height:1.4; opacity:0.85;">A coin-sized antenna coil and a chip, thinner than a millimetre &mdash; fixed under the base of the grinder.</p>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center; margin-top:24px;">
+      <div style="display:flex; gap:32px; align-items:baseline; padding:18px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">01</span><div><div style="font-size:31px; font-weight:600;">No battery</div><div style="font-size:26px; opacity:0.75; margin-top:2px;">The phone's own field powers the tag &mdash; it lasts as long as the grinder</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:18px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">02</span><div><div style="font-size:31px; font-weight:600;">No app, no QR code</div><div style="font-size:26px; opacity:0.75; margin-top:2px;">Hold a phone within a few centimetres and the page opens</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:18px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">03</span><div><div style="font-size:31px; font-weight:600;">Nothing printed on the label</div><div style="font-size:26px; opacity:0.75; margin-top:2px;">The minimalist packaging stays exactly as it is</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:18px 0; border-top:1px solid rgba(255,255,255,0.35); border-bottom:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">04</span><div><div style="font-size:31px; font-weight:600;">Cents at volume, editable forever</div><div style="font-size:26px; opacity:0.75; margin-top:2px;">The tag holds a web link, so Oryx can change the destination any time</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section data-label="What one tap unlocks" data-speaker-notes="What's behind the tap. Five sections, deliberately short. The Kalahari origin story. The founder story — the human face that builds trust. Why ceramic: the mechanism that doesn't go scratchy and cranky like plastic heads. How to refill and what it saves. And a direct route to buy a refill from Oryx. Purity claims only go live once third-party lab verification is in place — that's where we'd spend before supply-chain expansion." style="position:relative; background:#111; color:#fff; display:grid; grid-template-columns:1fr 1.15fr; font-family:Poppins, sans-serif; overflow:hidden;">
+  <div style="position:relative;">
+    <img src="assets/hands-grinder-bw.png" alt="Hands holding an Oryx Desert Salt grinder" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.04);">
+    <div style="position:absolute; inset:0; background:linear-gradient(270deg, #111 0%, rgba(17,17,17,0) 32%);"></div>
+  </div>
+  <div style="padding:100px 100px 80px 60px; display:flex; flex-direction:column;">
+    <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">The Solution · NFC landing page</div>
+    <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">What one tap unlocks</h2>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center; margin-top:16px;">
+      <div style="display:flex; gap:32px; align-items:baseline; padding:10px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">01</span><div><div style="font-size:33px; font-weight:600;">The Kalahari origin</div><div style="font-size:25px; opacity:0.75; margin-top:2px;">Ancient underground lakes, sun-dried, land-locked</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:10px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">02</span><div><div style="font-size:33px; font-weight:600;">The founder story</div><div style="font-size:25px; opacity:0.75; margin-top:2px;">A human face that builds trust</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:10px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">03</span><div><div style="font-size:33px; font-weight:600;">Why ceramic</div><div style="font-size:25px; opacity:0.75; margin-top:2px;">A mechanism that outlasts plastic heads</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:10px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">04</span><div><div style="font-size:33px; font-weight:600;">How to refill &amp; what it saves</div><div style="font-size:25px; opacity:0.75; margin-top:2px;">A refill box costs less than a new grinder</div></div></div>
+      <div style="display:flex; gap:32px; align-items:baseline; padding:22px 0; border-top:1px solid rgba(255,255,255,0.35); border-bottom:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:37px; min-width:60px;">05</span><div><div style="font-size:33px; font-weight:600;">Buy a refill</div><div style="font-size:25px; opacity:0.75; margin-top:2px;">Straight to Oryx or the nearest stockist</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section data-label="NFC demo video" data-speaker-notes="Play the demonstration video here: a hand lifting the grinder, tapping a phone against the base, and the Salt Within Reach page opening. Keep it to twenty or thirty seconds — the point is that it takes one motion." style="position:relative; background:#111; color:#fff; padding:80px 100px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">The Solution · Demonstration</div>
+  <h2 style="margin:20px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:62px; line-height:1.1; letter-spacing:-1.5px;">One tap, in practice</h2>
+  <div style="flex:1; margin-top:32px; border:3px dashed rgba(255,255,255,0.45); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px;">
+    <div style="font-family:ui-monospace, 'SF Mono', Menlo, monospace; font-size:30px; letter-spacing:2px; opacity:0.8;">DROP NFC DEMO VIDEO HERE</div>
+    <div style="font-size:26px; opacity:0.55;">16:9 · replace this box with the video element</div>
+  </div>
+</section>
+
+<section data-label="One grinder, refilled" data-speaker-notes="The consumer logic in one line: if you've already paid for a good ceramic grinder, there's no reason to buy a new one every time the salt runs out. The ceramic mechanism outlasts plastic. Refills cost less than new grinders. And less waste is the bonus — Oryx's own Refill Not Landfill — not the pitch." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:grid; grid-template-columns:1.1fr 1fr; gap:100px; font-family:Poppins, sans-serif;">
+  <div style="display:flex; flex-direction:column;">
+    <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">The Solution · Consumer value</div>
+    <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:96px; line-height:1; letter-spacing:-3px;">One grinder.<br>Refilled for life.</h2>
+    <p style="margin:32px 0 0; font-size:33px; line-height:1.45; color:#333; max-width:760px;">If someone has already paid for a good ceramic grinder, there is no reason they should buy a whole new one every time the salt runs out.</p>
+    <div style="flex:1; margin-top:28px; position:relative; overflow:hidden; background:#f4f4f4;">
+      <img src="assets/grinder-refill-box.png" alt="Oryx grinder beside its refill box" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.04);">
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; justify-content:center;">
+    <div style="padding:24px 0; border-top:3px solid #111;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Lasts</div>
+      <h3 style="margin:16px 0 12px; font-size:41px; font-weight:600; line-height:1.15;">Ceramic outlasts plastic</h3>
+      <p style="margin:0; font-size:25px; line-height:1.4; color:#333;">A durable mechanism that keeps grinding cleanly &mdash; the functional &ldquo;gold standard&rdquo; against disposable heads.</p>
+    </div>
+    <div style="padding:24px 0; border-top:3px solid #111;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Saves</div>
+      <h3 style="margin:16px 0 12px; font-size:41px; font-weight:600; line-height:1.15;">Refills cost less than new grinders</h3>
+      <p style="margin:0; font-size:25px; line-height:1.4; color:#333;">Total cost of ownership beats repeat purchases of plastic grinders &mdash; more use from something already paid for.</p>
+    </div>
+    <div style="padding:24px 0; border-top:3px solid #111; border-bottom:3px solid #111;">
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Bonus</div>
+      <h3 style="margin:16px 0 12px; font-size:41px; font-weight:600; line-height:1.15;">Less waste &mdash; &ldquo;Refill Not Landfill&rdquo;</h3>
+      <p style="margin:0; font-size:25px; line-height:1.4; color:#333;">Oryx's own framing. The sustainable option is also the practical one &mdash; so it supports the message rather than carrying it.</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="Refill is the engine" data-speaker-notes="The refill system is the commercial engine. 95% said a refillable, reusable grinder makes them more likely to buy. 60% chose the ceramic grinder as something that justifies a premium. And 32 of our 40 respondents were already interested in refills — those are the repeat buyers we convert first. Frame the grinder's total cost of ownership against repeat disposable grinders." style="position:relative; background:#111; color:#fff; display:grid; grid-template-columns:1fr 1.05fr; font-family:Poppins, sans-serif; overflow:hidden;">
+  <div style="position:relative;">
+    <img src="assets/salt-pepper-refills-bw.png" alt="Oryx salt and pepper grinders beside their refill boxes" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:contrast(1.04);">
+    <div style="position:absolute; inset:0; background:linear-gradient(270deg, #111 0%, rgba(17,17,17,0) 30%);"></div>
+  </div>
+  <div style="padding:100px 100px 80px 56px; display:flex; flex-direction:column;">
+    <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">The Solution · Commercial engine</div>
+    <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">The refill system is the commercial engine</h2>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:24px; margin-top:32px;">
+      <div style="display:flex; gap:36px; align-items:baseline; border-top:2px solid #fff; padding-top:22px;">
+        <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:84px; line-height:1; min-width:230px; letter-spacing:-3px;">95%</div>
+        <p style="margin:0; font-size:27px; line-height:1.35; opacity:0.85;">say a refillable, reusable grinder would make them more likely to buy Oryx</p>
+      </div>
+      <div style="display:flex; gap:36px; align-items:baseline; border-top:2px solid #fff; padding-top:22px;">
+        <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:84px; line-height:1; min-width:230px; letter-spacing:-3px;">60%</div>
+        <p style="margin:0; font-size:27px; line-height:1.35; opacity:0.85;">chose the reusable ceramic grinder as something that justifies a premium price</p>
+      </div>
+      <div style="display:flex; gap:36px; align-items:baseline; border-top:2px solid #fff; border-bottom:2px solid #fff; padding:22px 0 26px;">
+        <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:84px; line-height:1; min-width:230px; letter-spacing:-3px;">32<span style="font-size:48px; opacity:0.7;">/40</span></div>
+        <p style="margin:0; font-size:27px; line-height:1.35; opacity:0.85;">respondents already interested in refills &mdash; the repeat buyers we convert first</p>
+      </div>
+    </div>
+    <p style="margin:0; font-size:26px; line-height:1.4; opacity:0.7;">Total cost of ownership beats repeat disposable-grinder purchases &mdash; &ldquo;Refill Not Landfill&rdquo;.</p>
+  </div>
+</section>
+
+<section data-label="A product that keeps talking" data-speaker-notes="Here's the innovation. NFC isn't new. Grinders aren't new. Combining ceramic hardware, a refill system, education and digital interaction into one continuing relationship is. Tap the grinder, discover the Kalahari story, order a refill instantly, and the relationship continues. Critically, the full origin and sustainability story lives off the packaging — on demand — which protects the minimalist look Oryx asked us to keep." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">The Solution · Innovation</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">The innovation: a product that keeps talking</h2>
+  <div style="flex:1; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:24px; align-items:stretch; margin-top:64px;">
+    <div style="background:#111; color:#fff; padding:44px 40px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; min-height:380px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">01</div>
+      <div><h3 style="margin:0 0 14px; font-size:41px; font-weight:600; line-height:1.15;">Tap the grinder</h3><p style="margin:0; font-size:28px; line-height:1.4; opacity:0.8;">NFC tag on the ceramic grinder; no app, no QR</p></div>
+    </div>
+    <div style="background:#111; color:#fff; padding:44px 40px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; min-height:380px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">02</div>
+      <div><h3 style="margin:0 0 14px; font-size:41px; font-weight:600; line-height:1.15;">Discover the Kalahari story</h3><p style="margin:0; font-size:28px; line-height:1.4; opacity:0.8;">Origin, purity and the founder story, told simply</p></div>
+    </div>
+    <div style="background:#111; color:#fff; padding:44px 40px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; min-height:380px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">03</div>
+      <div><h3 style="margin:0 0 14px; font-size:41px; font-weight:600; line-height:1.15;">Order a refill instantly</h3><p style="margin:0; font-size:28px; line-height:1.4; opacity:0.8;">Refill box to the door or the nearest retailer</p></div>
+    </div>
+    <div style="border:3px solid #111; padding:44px 40px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; min-height:380px;">
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px;">04</div>
+      <div><h3 style="margin:0 0 14px; font-size:41px; font-weight:600; line-height:1.15;">The relationship continues</h3><p style="margin:0; font-size:28px; line-height:1.4; color:#333;">Each refill is another tap, another reason to stay</p></div>
+    </div>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:48px; font-size:28px; line-height:1.45; color:#333;">
+    <p style="margin:0;">NFC and the grinder aren't new on their own. The innovation is combining ceramic hardware, refill system, education and digital interaction into one continuing relationship.</p>
+    <p style="margin:0;">Keeping the full origin, refill and sustainability story off the packaging &mdash; available on demand &mdash; protects Oryx's premium, minimalist look.</p>
+  </div>
+</section>
+
+<section data-label="04 Implementation" data-speaker-notes="Part four — how we roll it out and how we'll know it worked." style="position:relative; overflow:hidden; background:#111; color:#fff; font-family:Poppins, sans-serif;">
+  <img src="assets/hands-bw.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 35%; filter:contrast(1.04);">
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 35%, rgba(0,0,0,0.85) 100%);"></div>
+  <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:44px 100px;">
+    <div style="display:flex; align-items:center; gap:56px; font-size:28px; font-weight:500;">
+      <span style="opacity:0.7;">Challenge</span><span style="opacity:0.7;">Research</span><span style="opacity:0.7;">Strategy</span><span style="opacity:0.7;">Solution</span><span>Plan</span>
+    </div>
+    <img src="assets/logo-white.png" alt="" style="width:120px; height:120px; object-fit:contain;">
+  </div>
+  <div style="position:absolute; left:100px; right:100px; bottom:90px; display:flex; align-items:flex-end; gap:60px;">
+    <div style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:260px; line-height:0.8; letter-spacing:-10px;">04</div>
+    <div style="padding-bottom:16px;">
+      <h2 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:88px; line-height:1; letter-spacing:-2px;">Implementation &amp; Measurement</h2>
+      <p style="margin:20px 0 0; font-size:33px; opacity:0.85;">A six-month, pilot-first rollout and six KPIs</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="Six-month rollout" data-speaker-notes="Six months, pilot first. Month one locks objectives and baselines. Months one to two build content, retail materials and the NFC experience with a creative agency and tech provider. Month two pilots with selected retail partners. Month three launches across digital and retail. Months three to six monitor monthly. Month six: formal review and scale-up decision. Resources: Oryx marketing, sales and management, retail partners, an agency, a tech provider, budget for digital, POS, tech and monitoring, and refill stock secured before launch." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Implementation · Timeline</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">A six-month, pilot-first rollout</h2>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; margin-top:32px;">
+    <div style="display:grid; grid-template-columns:220px 1fr 1fr; gap:40px; padding:11px 0; border-bottom:3px solid #111; font-size:26px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#555;"><span>Timeline</span><span>Activities</span><span>Output</span></div>
+    <div style="display:grid; grid-template-columns:220px 1fr 1fr; gap:40px; padding:11px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.35;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:33px;">Month 1</span><span>Finalise campaign objectives and baseline measurements</span><span style="color:#333;">Approved objectives + baseline data</span></div>
+    <div style="display:grid; grid-template-columns:220px 1fr 1fr; gap:40px; padding:11px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.35;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:33px;">Months 1&ndash;2</span><span>Develop campaign content, retail materials and the NFC experience (agency + tech provider)</span><span style="color:#333;">Campaign materials + digital experience</span></div>
+    <div style="display:grid; grid-template-columns:220px 1fr 1fr; gap:40px; padding:11px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.35;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:33px;">Month 2</span><span>Pilot with selected products and retail partners</span><span style="color:#333;">Pilot feedback + improvements</span></div>
+    <div style="display:grid; grid-template-columns:220px 1fr 1fr; gap:40px; padding:11px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.35;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:33px;">Month 3</span><span>Launch across digital and retail channels</span><span style="color:#333;">Launch + increased awareness</span></div>
+    <div style="display:grid; grid-template-columns:220px 1fr 1fr; gap:40px; padding:11px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.35;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:33px;">Months 3&ndash;6</span><span>Monitor engagement, feedback, awareness and refill conversion</span><span style="color:#333;">Monthly performance results</span></div>
+    <div style="display:grid; grid-template-columns:220px 1fr 1fr; gap:40px; padding:11px 0; border-bottom:3px solid #111; font-size:27px; line-height:1.35;"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:33px;">Month 6</span><span>Final review; decide on scale-up</span><span style="color:#333;">Evaluation report + decision</span></div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:28px; font-size:26px; color:#555;"><span>Keep the NFC journey simple · foreground durability and long-term savings to address price sensitivity · phase to reduce risk</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="KPI framework" data-speaker-notes="Six KPIs. Awareness and understanding tell us whether people recognise the real benefits. Digital engagement — NFC scans, visits, social — tells us whether we're reaching them. Refill conversion is the critical one: it tests whether awareness becomes behaviour. Satisfaction and ROI confirm it's liked and financially sustainable. Baselines before launch, tracked monthly; low engagement means simplify the journey, low refill conversion means review availability, pricing and communication. Formal evaluation at month six." style="position:relative; background:#fff; color:#111; padding:100px 100px 80px; display:flex; flex-direction:column; font-family:Poppins, sans-serif;">
+  <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#555;">Measurement · KPI framework</div>
+  <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:70px; line-height:1.1; letter-spacing:-1.5px;">Six KPIs track awareness through to refill and return</h2>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; margin-top:32px;">
+    <div style="display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:40px; padding:10px 0; border-bottom:3px solid #111; font-size:26px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#555;"><span>KPI</span><span>Measured by</span><span>Tells us</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:40px; padding:10px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.3;"><span style="font-weight:600; font-size:28px;">Brand awareness</span><span>Pre- and post-campaign surveys</span><span style="color:#333;">Whether more people know Oryx and its benefits</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:40px; padding:10px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.3;"><span style="font-weight:600; font-size:28px;">Digital engagement</span><span>Website visits, NFC scans, social reach and shares</span><span style="color:#333;">Whether the campaign reaches and informs people</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:40px; padding:10px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.3;"><span style="font-weight:600; font-size:28px;">Product understanding</span><span>Customer feedback and survey responses</span><span style="color:#333;">Whether grinder, refill and origin are understood</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:40px; padding:10px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.3; background:#f2f2f2; margin:0 -24px; padding-left:24px; padding-right:24px; padding-top:10px; padding-bottom:10px;"><span style="font-weight:600; font-size:28px;">Refill conversion</span><span>Refill purchases vs. initial grinder purchases</span><span style="color:#333;">The critical test: does awareness become behaviour?</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:40px; padding:10px 0; border-bottom:1px solid #ccc; font-size:27px; line-height:1.3;"><span style="font-weight:600; font-size:28px;">Customer satisfaction</span><span>Reviews, surveys, service feedback</span><span style="color:#333;">Where the experience needs improving</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:40px; padding:10px 0; border-bottom:3px solid #111; font-size:27px; line-height:1.3;"><span style="font-weight:600; font-size:28px;">Campaign ROI</span><span>Campaign cost vs. sales and refill revenue</span><span style="color:#333;">Whether the campaign is financially sustainable</span></div>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:28px; font-size:26px; color:#555;"><span>Baselines before launch, tracked monthly · low engagement &rarr; simplify the journey · low conversion &rarr; review availability, price, communication</span><img src="assets/logo-black.png" alt="" style="width:72px; height:72px; object-fit:contain;"></div>
+</section>
+
+<section data-label="Five recommendations" data-speaker-notes="To close, five prioritised recommendations. Lead with quality, purity, taste and functionality. Simplify information. Position sustainability as an added benefit. Actively drive refills. Keep the voice premium but approachable." style="position:relative; background:#111; color:#fff; padding:100px 100px 80px; display:grid; grid-template-columns:1fr 1.4fr; gap:100px; font-family:Poppins, sans-serif;">
+  <div style="display:flex; flex-direction:column; justify-content:space-between;">
+    <div>
+      <div style="font-size:26px; font-weight:600; letter-spacing:5px; text-transform:uppercase; opacity:0.7;">Summary</div>
+      <h2 style="margin:24px 0 0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:80px; line-height:1; letter-spacing:-2.5px;">Five prioritised recommendations</h2>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; justify-content:center;">
+    <div style="display:flex; gap:40px; align-items:baseline; padding:30px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:70px;">1</span><p style="margin:0; font-size:33px; line-height:1.4;">Lead with quality, purity, taste and functionality to win buyers from familiar competitors</p></div>
+    <div style="display:flex; gap:40px; align-items:baseline; padding:30px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:70px;">2</span><p style="margin:0; font-size:33px; line-height:1.4;">Simplify product information so benefits are understood at a glance</p></div>
+    <div style="display:flex; gap:40px; align-items:baseline; padding:30px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:70px;">3</span><p style="margin:0; font-size:33px; line-height:1.4;">Position sustainability as an added benefit, not the primary reason to buy</p></div>
+    <div style="display:flex; gap:40px; align-items:baseline; padding:30px 0; border-top:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:70px;">4</span><p style="margin:0; font-size:33px; line-height:1.4;">Actively encourage the refill system to drive repeat purchase</p></div>
+    <div style="display:flex; gap:40px; align-items:baseline; padding:30px 0; border-top:1px solid rgba(255,255,255,0.35); border-bottom:1px solid rgba(255,255,255,0.35);"><span style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:44px; min-width:70px;">5</span><p style="margin:0; font-size:33px; line-height:1.4;">Keep a premium yet approachable voice through simple, relatable communication</p></div>
+  </div>
+</section>
+
+<section data-label="Close" data-speaker-notes="Salt Within Reach: communicate the value already built into Oryx Desert Salt — quality first, sustainability as the strengthening story. Thank you. We welcome your questions." style="position:relative; overflow:hidden; background:#f4f4f4; color:#111; font-family:Poppins, sans-serif;">
+  <img src="assets/saltpan-final.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 60%; filter:contrast(1.04);">
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0.75) 100%);"></div>
+  <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:44px 100px;">
+    <div style="display:flex; align-items:center; gap:56px; font-size:28px; font-weight:500; color:#111; opacity:0.75;">
+      <span>Challenge</span><span>Research</span><span>Strategy</span><span>Solution</span><span>Plan</span>
+    </div>
+    <img src="assets/logo-black.png" alt="" style="width:120px; height:120px; object-fit:contain;">
+  </div>
+  <div style="position:absolute; left:100px; right:100px; bottom:90px; display:flex; flex-direction:column; gap:28px;">
+    <h2 style="margin:0; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:140px; line-height:0.95; letter-spacing:-4px;">Thank you</h2>
+    <p style="margin:0; max-width:1200px; font-size:35px; line-height:1.4; color:#222;">Salt Within Reach &mdash; communicating the value already built into Oryx Desert Salt. Quality first, sustainability as the strengthening story.</p>
+    <div style="font-size:28px; color:#333; margin-top:8px;">Group 2 · BCom Innovation Challenge · Questions welcome</div>
+  </div>
+</section>
+
+</x-import>
+</x-dc>
+</body>
+</html>
